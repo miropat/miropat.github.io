@@ -46,7 +46,7 @@
 	// Menu.
 		var $menu = $('#menu');
 
-		$menu._locked = false;
+		$menu._locked = true;
 
 		$menu._lock = function() {
 
