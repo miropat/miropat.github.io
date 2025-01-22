@@ -1,3 +1,8 @@
+/*
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
 (function($) {
 
@@ -13,9 +18,7 @@
 			medium:	'(max-width: 980px)',
 			small:	'(max-width: 736px)',
 			xsmall:	'(max-width: 480px)'
-					});
-		
-		})(jQuery);
+		});
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
@@ -42,7 +45,7 @@
 	// Menu.
 		var $menu = $('#menu');
 
-		$menu._locked = true;
+		$menu._locked = false;
 
 		$menu._lock = function() {
 
@@ -138,3 +141,5 @@
 						$menu._hide();
 
 			});
+
+})(jQuery);
