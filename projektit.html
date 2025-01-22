@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Miro Patrakka, Tech-CV</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5S5HH54QG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F5S5HH54QG');
+</script>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Miro Patrakka, Tech-CV</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Yleistä</a></li>
+								<li><a href="generic.html">Minusta</a></li>
+								
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Projektit</h2>
+								<h3>Ajanottolaitteisto</h3>
+								<p>Aloitin vuonna 2023 projektin, jolla halusin ensisijaisesti tehdä itselleni sähköisen ajanottolaitteen, jolla voin mitata tarkasti omia, sekä valmennettavien urheilijoiden juoksunopeutta. Hankin Arduino Uno R3 kehitysalustan, jota aloin pikkuhiljaan kehittämään. Ensimmäiset askeleet olivat luoda logiikka valokennoille, joten tein yksikertaisen portin, jossa käytössä oli LDR ja taskulamppu. Täten sain portin aktivoitumaan kun valo oli tarpeeksi kirkas. Seuraava haasteeni oli ratkaista muun valon häiritseminen, joten päädyin käyttämään lasereita.  </p>
+								<br>
+								<p>Tässä kohtaa projektissa kun perus valokennon logiikka oli teoriassa valmis, ymmärsin että projektin komponenttien pitää pysyä paikoillaa ja olla suunnattuna oikeaan suuntaan. Projekti oli vielä tässä kohtaa koekytkentäalustalla, joten minun piti kehittää kustomoidut 3D tulosteet. Aloin opettelemaan 3D mallinnusta TinkerCadilla ja tulostamaan erilaisia laatikoita Porin Kaupungin kirjastolla, koska siellä sattui olemaan halpa/varattava Ultimaker 3 tulostin. Lopulta projektille ja lasereille saatiin tyydyttävät kotelot, jotka pitivät ne paikoillaan ja mahdollistivat laasereiden tarkan suuntaamisen LDR sensoreihin.</p>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Ajanottolaitteisto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<p>Vaikka projekti oli käytännössä toimiva, ja ajanotto vaikutti luotettavalta, piti kuitenkin punnita laitteen vaatimukset uudestaan tässä kohtaa.</p>
+								<ul>
+									<li>Ajanotto pitää olla helppoa ja tarkkaa</li>
+									<li>Projektin pitää olla helposti käytettävä, siirrettävä ja kestävä</li>
+									<li>Projektilla pitää olla vähintään 30m kantama, videon Arduinot käyttivät RF24 lähettimiä, joilla päästiin noin 26m etäisyyteen.</li>
+									<li>Projektin käyttö pitää olla turvallista ja mahdollista myös aurinkoisella päivällä. Arduino käytti laser diodeita ja LDR sensoreita, joten tähään pitää tehdä muutos ja käyttää modernimpia ratkaisuja, kuten infrapunaa valokennojen muodostamiseen.</li>
+									<li>Projektin pitää olla langaton ja liitettävissä, sekä puhelimeen, että tietokoneeseen</li>
+								</ul>
+
+								<p>Version 1.2</p>
+								
+								<p>Aluksi hankin pienemmät arduino moduulit, joissa oli myös bluetooth ja wifi mahdollisuudet. Täten voin poistaa RF24 moduulit kokonaan projektista ja yksinkertaistaa laitetta. Lisäksi hankin Infrapuna LED:it ja vastaanottimet, joiden kautta sain tehtyä teorissa toimivat kennot uudestaan ja samalla konfiguitoitua kahden Arduinon välinen kommunikaatio Wifi:n välityksellä.</p>
+								<p>Logiikkahan toimii kaikessa yksinkertaisuudessaan niin, että molemmat "portit",joissa IR valo menee, mittaavat jatkuvasti IR-valon määrää. Kun IR laskee tietyn tason alle ja palautuu, voimme todeta portin rikkoutuneen, eli urheilijan juosseen siitä läpi. Ensimmäisen portin rikkoutuessa ajanottokäynnistyy, jättämällä aikaleiman ja sama toistuu toisen portin kohdalla. Kun portit ovat molemmat rikkoutuneet, konrolleri laskee erotuksen aikaleimojen välillä ja saadaan lukema sekunneissa.</p>
+								<p>Käytettävyys...</p>
+								<P>Laitteen asemointi oli erityisen haastavaa ja etenkin IR-valon suuntaaminen vastaaottimelle oli erityisen työlästä. Ensin ajattelin, että laite tulee hyödyntämään heijastimia/peilejä IR valon heijastamiseen takaisin, jotta sekä valo, että vastaanotin voivat olla samassa kotelossa. Päädyin kuitenkin käyttämään erillisiä koteloita, ilman heijastinta. Laitteeseen piti lisätä useita LED-valoja indikoimaan mm. laitteen valmiutta, kuten IR valokennon suuntausta, mutta koekytkentäalustan käyttö tässä kohtaa alkoi olla erittäis sekavaa. Ensin hankin muutamia reikälevyjä ja tein juotoksia tähän, mutta sama onglema pysyi: Liian paljon johtoja ja sekavuutta, jotta laitteen saa helposti koteloitua.</P>
+								<p>Versio 1.3 - Kustomoidut PCB:t. Tulin siihen tulokseen, että kustomoidun PCB levyn tuottaminen on nyt ajankohtaista. Aloitin siis harjoittelemaan KiCad sovelluksella sähköpiirien suunnittelua. Lyhykäisyydessään, tätä kirjoittaessa odotan 3:tta PCB lähetystäni, koska levyissä on ollut, joitain suunitelmavirheitä tai väärän kokoisia komponentin kuvia. Samalla olen kuitenkin huomannut kuknka kivaa juottaminen on ja tässä on tullut täten aika paljon harjoitusta :D Lisäksi Arduinot oli aika vaihtaa ESP32 moduuleihin, koska nämä tukivat langatonta yhteyttä paremmin ja toimivat nopeammalla taajuudella. Haasteena tuli eteen toki se, että PCB:lle piti suunitella koko virtapiiri, lataus ja USB portit, jotta ESP32 operoi 3.3V ja mahdollistaa sekä langallisen, että langattoman käytön LiPo akulla.  </p>
+								<br>
+								<p>Käyttöliittyvä Pythonilla - Tarvitsin tietokoneelle käyttöliittymän, laitteen tueksi, jotta voin mm. tallentaa tuloksia tietokantaan ja nähdä helposti tulokset näytöltä (eikä Arduinon terminalista).
+								Olen siis kehitellyt käyttöliittymää ja samalla tein Raspberry Pi:lle simuloidun järjestelmän, joka lähettää minulle verkon välityksellä aikoja virallisen laitteen tavoin. Täten voin jatkaa käyttöliittymän suunnittelua, niin kauan kuin saan uudet PCB levyni. RP asensin siis yksinkertaisesti Dockerin ja tein pythonilla ohjelman, joka yhdistämisen jälkeen kun on saanut lähtökomennon lähettää ajan 2-5 sekunnin väliltä käyttöliittymälle, joka prosessoi datan. Tämä voidaan sitten vaikka siirtää tietokantaan. Tärkeintä kuitenkin käyttöliittymälle on se, että yhteys muodostuu ja voin mahdollistaa realistisen kehityksen vaikkakin simuloidusti.
+								<p>Käyttöliittymä Pythonilla (Github) -  Katso Development Branch, jossa nykyinen testiympäristö <a href="https://github.com/miropat/timing-system-app.git">täältä</a></p>
+								</ul>
+								</p>
+								<p>Taidot</p>
+								<ul>
+									<li>Python</li>
+									<li>KiCad</li>
+									<li>TinkerCad ja Ultimaker</li>
+									<li>Arduino & ESP32</li>
+									<li>RF24</li>
+									<li>IR sensorit</li>
+								</ul>
+							</p>
+							</div>
+							<br>
+						</header>
+
+
+					</section>
+
+
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
