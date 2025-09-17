@@ -53,6 +53,10 @@
 							<div class="inner">
 								<h2>Projektit</h2>
 
+
+								<h3>FFBeast ajosimulaattori</h3>
+								<p>Inspiroiduin kesällä 2025 oman rattiohjaimen rakentamisesta, kuultuani avoimen lähdekoodin ohjelmistosta FFBeast. Ratin pohjana toimii Howeboard moottori, joka voidaan konfiguroida Force Feedback tyyliseksi direct drive ohjaimeksi</p>
+								<p></p>
 								
 								<h3>Sähköinen ajanottolaitteisto</h3>
 								<p>Aloitin vuonna 2023 projektin, jolla halusin ensisijaisesti tehdä itselleni sähköisen ajanottolaitteen, jolla voin mitata tarkasti omia, sekä valmennettavien urheilijoiden juoksunopeutta. Hankin Arduino Uno R3 kehitysalustan, jota aloin pikkuhiljaan kehittämään. Ensimmäiset askeleet olivat luoda logiikka valokennoille, joten tein yksikertaisen portin, jossa käytössä oli LDR ja taskulamppu. Täten sain portin aktivoitumaan kun valo oli tarpeeksi kirkas. Seuraava haasteeni oli ratkaista muun valon häiritseminen, joten päädyin käyttämään lasereita.  </p>
@@ -83,6 +87,16 @@
 								<p>Käyttöliittymä Pythonilla (Github) -  Katso Development Branch, jossa nykyinen testiympäristö <a href="https://github.com/miropat/timing-system-app.git">täältä</a></p>
 								</ul>
 								</p>
+								<br>
+
+								<p> Version 2.0 - Päivitetty 09/2025</p>
+								<p>Päivitykseen vaihdoin jälleen uudet mikrokontrollerit. Tällä kertaa nopeammat ja edullisemmat ESP32-c3 kehitysalustat. ESP32-c3 sisältää, bluetooth, WIfi, sekä ESP-Now protokollan, jota voi hyödyntää mm. kahden yksikön väliseen kommunikaatioon, joka tekee porttien välisestä kommunikaatiosta suoraviivaista. Lisäksi se tuo mukaan Bluetooth Low energy mahdollisuuden, joten laitteistoon voidaan luoda käyttöliittymä mobiililaitteelle.</p>
+								<p>Sähköisessä ajanotossa, ja etenkin harjoituksissa käytettävissä ajanottolaitteissa on haasteena sen käytettävyys. Halusin poistaa suuntauksen haasteen, jossa IR-valoa suunnataan ensin heijastimiin tai vastaanottimiin. Käytin uudempia, sekä modernimpia LIDAR sensoreita, joita käytetään mm. Droneissa ja Robotti-imureissa. Nämä sensorit mahdollistavat nopean havainnoinnin ja tarkan etäisyyden mittauksen, jonka logiikka voidaan muuttaa käynnistämää ja pysäyttämään ajanoton.</p>
+								<p>Lisäksi tietojenkäsittelyn opinnäytetyöaiheeksi valitsin käyttöliittymän eli mobiilisovelluksen kehityksen. Koska mobiilisovellus kehitys ei itselleni ollut niin tuttua ja halusin tehdä tästä mahdollisimman toimivan projektin ns. prototyypin, valitsin kehitysalustaksi FlutterFlown, jonka kautta sain android tabletilla ajettua sovellusta kehitysaikana, ja testaamaan laitetta säännöllisesti.</p>
+								<p>Ilokseni voin mainita, että ajanottotestauksen ja kenttätestauksen aikana saavutin parhaimmillaan millisekunnin tarkkuuden, joka on enemmän kuin tarpeeksi harjoitusajanottokennoille. Ajanotossa tulee isompaa virhettä puhtaasti biomekaanisista tekijöistä, kuten urheilijan kurottamisesta maaliviivalla, tai ei toistettavasta testimetodeista, kuten kennojen korkeudesta.</p>
+								<p> ESP32 pohjaiset ajanottokennot ovat hyvin minimalistiset ja koteloitu 3d-tulostettuihin paketteihin, joissa piirilevy, sekä anturi pysyvät paikallaan </p>
+								<p>Versio 3.0 tulee sisältämään kustomoidun piirilevyn, jossa on ESP32 mikrokontrolleri, latauspiiri, Boost-converter 5Volttiin, kytkentä anturille ja kytkennät softan asennukseen.<p/>
+								
 								<p>Taidot</p>
 								<ul>
 									<li>Python</li>
