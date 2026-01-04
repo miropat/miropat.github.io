@@ -77,8 +77,32 @@
 								
 
 								<h2>FFBeast ajosimulaattori</h2>
-								<p>Inspiroiduin kesällä 2025 oman rattiohjaimen rakentamisesta, kuultuani avoimen lähdekoodin ohjelmistosta FFBeast. Ratin pohjana toimii Howeboard moottori, joka voidaan konfiguroida Force Feedback tyyliseksi direct drive ohjaimeksi</p>
-								<p></p>
+
+									<p>Inspiroiduin kesällä 2025 rakentamaan oman Force Feedback -rattiohjaimen, kun kuulin avoimen lähdekoodin FFBeast-projektista. Halusin päästä kokeilemaan “direct drive” -tuntumaa itse tehdyllä ratilla ja oppia samalla moottoriohjauksesta, elektroniikasta ja mekaanisesta suunnittelusta käytännön kautta.</p>
+									
+									<p><strong>Lähtökohta ja suunnittelu:</strong> Ratin pohjana toimii hoverboardin (Howeboard) BLDC-moottori, joka soveltuu hyvin vääntöä vaativaan käyttöön. Ennen kasausta kartoitin tarvittavat osat (moottori, virtalähde, moottorinohjain/driveri, MCU, kaapelointi, liittimet, mahdollinen hätäpysäytys) ja mietin kiinnityksen sekä rungon jäykkyyden, jotta voimien välittyminen olisi tarkkaa eikä rakenne eläisi kuormassa.</p>
+									
+									<p><strong>Mekaaninen toteutus:</strong> Rakensin moottorille tukevan kiinnityksen ja sovitin ratin akselin/adapterin niin, että keskilinja pysyy suorana ja värinät minimoituvat. Panostin myös kaapelireitteihin ja vedonpoistoihin, koska direct drive -kokoonpanossa liikkeet ja vääntö paljastavat nopeasti “löysät” ratkaisut.</p>
+									
+									<p><strong>Sähköt ja ohjaus:</strong> Kytkin moottorin ohjauselektroniikan, virtalähteen ja MCU:n, ja varmistin oikeat jännitteet sekä maadoitukset ennen ensimmäisiä testejä. Käytin aikaa siihen, että ymmärsin perusasiat BLDC/FOC-tyyppisestä ohjauksesta, signaaleista ja siitä, miten pienetkin virheet johdotuksessa tai asetuksissa näkyvät käytöksessä (esim. nykiminen, väärä suunta, epävakaus).</p>
+									
+									<p><strong>Ohjelmisto ja kalibrointi:</strong> Flashasin tarvittavat firmwaret, tein alkuasetukset ja säädin force feedback -parametreja simulaattoreita varten. Testasin tuntumaa eri asetuksilla (voima, suodatus, vaimennus) ja hain balanssia “vahvan” palautteen ja hallittavan ajotuntuman välillä.</p>
+									
+									<p><strong>Vikatilanne & oppiminen (MCU-oikosulku):</strong> Rakennusvaiheessa MCU:hun tuli oikosulku, mikä pakotti sukeltamaan syvemmälle komponenttitasolle ja oikeaan troubleshootaukseen. Kävin läpi virtalinjoja mittaamalla, tarkistin liitokset ja komponenttien kunnon, etsin mahdollisia oikosulun syitä (juotokset, väärä pinni, puristunut johto, huono eristys) ja päivitin samalla rakennetta turvallisemmaksi (parempi kaapelinhallinta, vedonpoistot, eristykset ja järkevämmät testirutiinit ennen täysiä tehoja). Tämä oli lopulta yksi projektin hyödyllisimmistä osuuksista, koska opin systemaattista vianrajausta sekä sitä, miten elektroniikkaa kannattaa rakentaa “huollettavaksi”.</p>
+									
+									<p><strong>Lopputulos:</strong> Projekti toi toimivan FFBeast direct drive -ratin, jolla force feedback tuntuu selkeästi ja joka toimii ajosimulaattoreissa käytännön testien perusteella hyvin. Samalla projekti kehitti osaamista mekaniikassa, elektroniikassa, firmware-asioissa ja vianetsinnässä – eli juuri niissä kohdissa, joissa tee-se-itse laitteet yleensä joko onnistuvat tai kaatuvat.</p>
+									
+									<!-- YouTube Shorts -video (vaihda VIDEO_ID omaksi) -->
+									<iframe
+									  width="315"
+									  height="560"
+									  src="https://www.youtube.com/embed/0LY-Cb8FFyY"
+									  title="FFBeast sim racing wheel - demo"
+									  frameborder="0"
+									  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									  allowfullscreen>
+									</iframe>
+
 								
 								<h2>Sähköinen ajanottolaitteisto</h2>
 								<p>Aloitin vuonna 2023 projektin, jolla halusin ensisijaisesti tehdä itselleni sähköisen ajanottolaitteen, jolla voin mitata tarkasti omia, sekä valmennettavien urheilijoiden juoksunopeutta. Hankin Arduino Uno R3 kehitysalustan, jota aloin pikkuhiljaan kehittämään. Ensimmäiset askeleet olivat luoda logiikka valokennoille, joten tein yksikertaisen portin, jossa käytössä oli LDR ja taskulamppu. Täten sain portin aktivoitumaan kun valo oli tarpeeksi kirkas. Seuraava haasteeni oli ratkaista muun valon häiritseminen, joten päädyin käyttämään lasereita.  </p>
